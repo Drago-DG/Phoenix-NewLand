@@ -1,0 +1,15 @@
+-- Table: public.cat_movie_genre
+
+-- DROP TABLE public.cat_movie_genre;
+
+CREATE TABLE public.cat_movie_genre
+(
+  id_genre integer NOT NULL,
+  genre_desc character varying,
+  CONSTRAINT cat_movie_genre_pkey PRIMARY KEY (id_genre)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.cat_movie_genre
+  OWNER TO postgres;

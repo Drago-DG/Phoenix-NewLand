@@ -1,0 +1,20 @@
+-- Table: public.cat_movies
+
+-- DROP TABLE public.cat_movies;
+
+CREATE TABLE public.cat_movies
+(
+  id_movie integer NOT NULL,
+  movie_name character varying,
+  movie_year integer,
+  id_genre integer,
+  CONSTRAINT cat_movies_pkey PRIMARY KEY (id_movie),
+  CONSTRAINT cat_movies_id_genre_fkey FOREIGN KEY (id_genre)
+      REFERENCES public.cat_movie_genre (id_genre) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.cat_movies
+  OWNER TO postgres;
